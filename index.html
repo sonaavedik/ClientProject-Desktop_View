@@ -161,14 +161,45 @@
     <p>The Engaged Learning Office works with partners across industries and sectors, from technology companies to grassroots nonprofits and cultural heritage institutions, to provide project-based opportunities for UMSI students.</p>
     <p>Its mission is to facilitate transformational engaged learning experiences and enable innovative, sustainable, and mutually beneficial information solutions for local and global communities.</p>
   </section>
-  <aside>
-    <h2>Stay Connected with ELO</h2>
-    <p>Get updates about ELO programs, workshops, events, and opportunities through the weekly newsletter.</p>
-    <div>
-       <a href="https://umsi.info/elo-newsletter"> Sign up for the ELO newsletter</a>
-    </div>
-    <p>Questions? Email<a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu </a>.</p>
-  </aside>
+
+  
+<aside>
+  <h2>Stay Connected with ELO</h2>
+  <p>
+    Get updates about ELO programs, workshops, events, and
+    opportunities through the weekly newsletter.
+  </p>
+
+  <button onclick="openNewsletterForm()">
+    Sign up for the ELO newsletter
+  </button>
+
+  <form id="newsletterForm" style="display: none;" 
+        onsubmit="submitNewsletter(event)">
+    <label for="email">Enter your email address:</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      placeholder="you@example.com" 
+      required
+    >
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="successMessage" style="display: none;">
+    Thank you for signing up!
+  </p>
+
+  <p>
+    Questions? Email
+    <a href="mailto:umsi.engagement@umich.edu">
+      umsi.engagement@umich.edu
+    </a>.
+  </p>
+</aside>
+
 
 
         <!-- Content taken & modified from UMGPT with the prompt, "Write me a webpage of intro content to help meet the following requirements - this is for the home page": and then pasted in the client objectives & project requirements"
@@ -199,6 +230,26 @@
     const now = new Date();
     document.getElementById('clock').innerText = now.toLocaleTimeString();
   }, 1000);
+</script>
+
+<script>
+
+function openNewsletterForm() {
+  document.getElementById("newsletterForm").style.display = "block";
+}
+
+function submitNewsletter(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+
+  document.getElementById("successMessage").style.display = "block";
+
+  document.getElementById("newsletterForm").style.display = "none";
+
+  console.log("Email submitted:", email);
+}
+
 </script>
     
 

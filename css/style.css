@@ -497,6 +497,25 @@ footer address {
   font-style: normal;
 }
 
+/* aside */
+
+aside button {
+  background-color: #00274c;
+  color: #ffcb05;
+  padding: 12px 24px;
+  border: 2px solid #00274c;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+aside button:hover {
+  background-color: #ffcb05;
+  color: #00274c;
+  border-color: #ffcb05;
+}
+
 /* Media Query */
 
 @media screen and (min-width: 1020px) {
